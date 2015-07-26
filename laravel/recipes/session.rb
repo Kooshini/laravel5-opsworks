@@ -1,6 +1,6 @@
-## Recipe to set-up the Laravel session config (/app/config/session.php)
+## Recipe to set-up the Laravel session config (/config/session.php)
 node[:deploy].each do |app_name, deploy|
-	template "#{deploy[:deploy_to]}/current/app/config/session.php" do
+	template "#{deploy[:deploy_to]}/current/config/session.php" do
 		source "session.php.erb"
 		mode 0664
 		group deploy[:group]

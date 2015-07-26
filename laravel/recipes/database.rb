@@ -1,6 +1,6 @@
-## Recipe to set-up the Laravel database config (/app/config/database.php)
+## Recipe to set-up the Laravel database config (/config/database.php)
 node[:deploy].each do |app_name, deploy|
-	template "#{deploy[:deploy_to]}/current/app/config/database.php" do
+	template "#{deploy[:deploy_to]}/current/config/database.php" do
 		source "database.php.erb"
 		mode 0664
 		group deploy[:group]
