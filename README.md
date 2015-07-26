@@ -1,6 +1,6 @@
 # Laravel 5x AWS OpsWoks Recipes
 
-These recipes will set-up Laravel 4x on Laravel OpsWorks
+These recipes will set-up Laravel 5x on Laravel OpsWorks
 
 ### Version
 0.2
