@@ -3,7 +3,7 @@ node[:deploy].each do |app_name, deploy|
 	storage_folder = "#{deploy[:deploy_to]}/current/storage"
 	cache_folder = "#{deploy[:deploy_to]}/current/bootstrap/cache"
 	if platform_family?('debian')
-		execute "set permissions for #{app_root}/storage" do
+		execute "set permissions for storage and cache folders" do
 		directory storage_folder do 
 		  mode 0777
 		  owner 'www-data'
