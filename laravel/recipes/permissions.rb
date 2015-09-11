@@ -7,14 +7,14 @@ node[:deploy].each do |app_name, deploy|
 		  mode 0777
 		  owner 'www-data'
 		  group 'www-data'
-		  recursive: true
+		  recursive true
 		  action :create
 		end
 		directory "#{app_root}/bootstrap/cache" do
 		  mode 0777
 		  owner 'www-data'
 		  group 'www-data'
-		  recursive: true
+		  recursive true
 		  action :create
 		end
 	  end
