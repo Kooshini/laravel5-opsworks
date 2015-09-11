@@ -17,7 +17,6 @@ node[:deploy].each do |app_name, deploy|
 		  recursive: true
 		  action :create
 		end
-		command "sudo chmod 0777 -Rf #{deploy[:deploy_to]}/current/storage/"
 	  end
 	end
 end
