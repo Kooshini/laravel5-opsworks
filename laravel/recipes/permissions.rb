@@ -14,6 +14,27 @@
 			  recursive true
 			  action :create
 			end
+			directory "#{deploy[:deploy_to]}/current/storage/framework/cache" do 
+			  mode 0777
+			  owner 'www-data'
+			  group 'www-data'
+			  recursive true
+			  action :create
+			end
+			directory "#{deploy[:deploy_to]}/current/storage/framework/sessions" do 
+			  mode 0777
+			  owner 'www-data'
+			  group 'www-data'
+			  recursive true
+			  action :create
+			end
+			directory "#{deploy[:deploy_to]}/current/storage/framework/views" do 
+			  mode 0777
+			  owner 'www-data'
+			  group 'www-data'
+			  recursive true
+			  action :create
+			end
 			directory "#{deploy[:deploy_to]}/current/storage/app" do 
 			  mode 0777
 			  owner 'www-data'
