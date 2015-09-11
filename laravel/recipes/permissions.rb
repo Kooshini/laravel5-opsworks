@@ -1,16 +1,17 @@
 ## Recipe to set recursive permissions for the Laravel storage folder /storage/ and bootstrap folders*
 node[:deploy].each do |app_name, deploy|
-	app_root = "#{deploy[:deploy_to]}/current"
+	storage_folder = "#{deploy[:deploy_to]}/current/storage"
+	cache_folder = "#{deploy[:deploy_to]}/current/bootstrap/cache"
 	if platform_family?('debian')
 		execute "set permissions for #{app_root}/storage" do
-		directory "#{app_root}/storage" do
+		directory storage_folder do 
 		  mode 0777
 		  owner 'www-data'
 		  group 'www-data'
 		  recursive true
 		  action :create
 		end
-		directory "#{app_root}/bootstrap/cache" do
+		directory cache_folder do
 		  mode 0777
 		  owner 'www-data'
 		  group 'www-data'
