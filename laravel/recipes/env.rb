@@ -1,7 +1,7 @@
 ## Recipe to set-up the Laravel env file (/.env)
 node[:deploy].each do |app_name, deploy|
 	template "#{deploy[:deploy_to]}/current/.env" do
-		source "env.erb"
+		source ".env.erb"
 		mode 0664
 		group deploy[:group]
 		owner "www-data"
