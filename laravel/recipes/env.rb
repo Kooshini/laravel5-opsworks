@@ -17,6 +17,7 @@ node[:deploy].each do |app_name, deploy|
 			:DB_USER => deploy[:environment_variables][:DB_USER],
 			:DB_PASS => deploy[:environment_variables][:DB_PASS],
 			:CACHE_DRIVER => deploy[:environment_variables][:CACHE_DRIVER],
+			:SESSION_DRIVER => deploy[:environment_variables][:SESSION_DRIVER],
 			:MAIL_DRIVER => deploy[:environment_variables][:MAIL_DRIVER],
 			:MAIL_HOST => deploy[:environment_variables][:MAIL_HOST],
 			:MAIL_PORT => deploy[:environment_variables][:MAIL_PORT],
