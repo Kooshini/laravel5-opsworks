@@ -18,6 +18,8 @@ node[:deploy].each do |app_name, deploy|
 			:DB_PASS => deploy[:environment_variables][:DB_PASS],
 			:CACHE_DRIVER => deploy[:environment_variables][:CACHE_DRIVER],
 			:SESSION_DRIVER => deploy[:environment_variables][:SESSION_DRIVER],
+			:REDIS_HOST => deploy[:environment_variables][:REDIS_HOST],
+			:REDIS_PORT => deploy[:environment_variables][:REDIS_PORT],
 			:MAIL_DRIVER => deploy[:environment_variables][:MAIL_DRIVER],
 			:MAIL_HOST => deploy[:environment_variables][:MAIL_HOST],
 			:MAIL_PORT => deploy[:environment_variables][:MAIL_PORT],
