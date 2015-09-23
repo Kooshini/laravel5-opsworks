@@ -3,26 +3,36 @@
 These recipes will set-up Laravel 5x on Laravel OpsWorks
 
 ### Version
-0.2
+0.3
 
 ### Changelog
 
+  - 0.3 - Changed directory creation and .env file support
   - 0.2 - Added NewRelic support
   - 0.1 - Initial
 
 ### Installation
 
-You will need Larvel in a public/private repo added as an application in OpsWorks and to enable custom cookbooks in your stack.
+You will need Larvel 5x in a public/private repo added as an application in OpsWorks and to enable custom cookbooks in your stack.
 
+All variables are pulled from the .env file which will be created in the root of the Laravel install by Chef. 
+
+Please ensure that the config/database.php config/session.php etc. are set-up correctly for example: 
+
+```php
+ 'default' => env('DB_CONNECTION', 'mysql'),
+ 'host'    => env('REDIS_HOST', '127.0.0.1'),
+ 'driver'  => env('SESSION_DRIVER', 'file'),
+```
 Create a new PHP layer and click on Recipes link on the layer and then EDIT. 
 
 Under Custom Chef Recipes use the following:
 
 ```sh
-Setup: laravel::packages
+Setup: laravel::packages OR laravel::packages-nd (for MySQL native driver)
 ```
 ```sh
-Deploy: laravel::permissions laravel::database laravel::migrate
+Deploy: laravel::permissions laravel::env
 ```
 Then click Save to complete the set-up. 
 
