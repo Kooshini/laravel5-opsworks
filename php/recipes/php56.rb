@@ -1,4 +1,5 @@
 include_recipe 'apache2'
+include_recipe 'apt'
 
 # add repository for PHP 5.6
 apt_repository "php56" do
